@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Patient Main.unity
+    guid: c643183d5e4ff31489db2204739bed22
+  - enabled: 0
+    path: Assets/Scenes/Caregiver Main.unity
+    guid: 3a06befa5b7196d44884d8aa6ab5ac5c
+  - enabled: 0
+    path: Assets/Scenes/assetbundleAndroidtest.unity
+    guid: fb5962b4acb75b54093cb7fcb9fc1dc4
+  - enabled: 0
+    path: Assets/Scenes/UMA Dynamic Character.unity
+    guid: 91490b2469f83f3468dbd3ec187e7b85

@@ -1,0 +1,1 @@
+module.exports = 'AKIAIUCZTP522MBYEAFQ' // TODO: aws API Key goes here

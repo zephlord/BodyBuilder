@@ -1,0 +1,1 @@
+module.exports = 'NDmr8bAtwLhkuOgO/PiJleSFb5ryA0lYDX6Zdi0a'; // TODO: AWS secret goes here
