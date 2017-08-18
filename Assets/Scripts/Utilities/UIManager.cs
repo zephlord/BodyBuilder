@@ -2,9 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+///<summary>
+/// manages ui elements in a sequence
+///</summary>
 public class UIManager : MonoBehaviour {
 
+	
 	[System.Serializable]
+	///<summary>
+	/// a UI Set is a ui element
+	/// and whether or not (and if so where) it needs the avatar to be shown while its UI is displayed
+	///</summary>
 	public struct uiSet
 	{
 		public GameObject obj;
@@ -12,8 +20,10 @@ public class UIManager : MonoBehaviour {
 		public bool needsAvatar;
 	}
 
+	// the UI elements
 	[SerializeField]
 	private uiSet[] _UIs;
+	// The avatar
 	[SerializeField]
 	private GameObject _avatar;
 	private int _index;
@@ -24,6 +34,9 @@ public class UIManager : MonoBehaviour {
 		_UIs[_index].obj.SetActive(true);
 	}
 	
+	///<summary>
+	///Goes to the next ui in the sequence
+	///</summary>
 	public void nextUI()
 	{
 		_UIs[_index].obj.SetActive(false);
@@ -32,6 +45,9 @@ public class UIManager : MonoBehaviour {
 		setAvatar (_UIs [_index]);
 	}
 
+	///<summary>
+	///Goes to the previous ui in the sequence
+	///</summary>
 	public void previousUI()
 	{
 		_UIs[_index].obj.SetActive(false);

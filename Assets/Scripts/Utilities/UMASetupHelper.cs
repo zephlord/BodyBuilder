@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+///<summary>
+/// Helps keep UMA from not fucking up everything graphically
+/// enables scaling and gravit/collider disable so it doesn't fly away
+///</summary>
 public class UMASetupHelper : MonoBehaviour {
 
 	public bool _disableGravity;
@@ -15,21 +19,23 @@ public class UMASetupHelper : MonoBehaviour {
 	private bool _isScaled;
 
 	
-	// Update is called once per frame
 	void Update () 
 	{
+		// Disable the collider
 		if(_disableCollider && GetComponent<Collider>() != null && !_isColliderDisabled)
 		{
 			GetComponent<Collider>().enabled = false;
 			_isColliderDisabled = true;
 		}
 
+		// Disable gravity
 		if(_disableGravity && GetComponent<Rigidbody>() != null && !_isGravityDisabled)
 		{
 			GetComponent<Rigidbody>().useGravity = false;
 			_isGravityDisabled = true;
 		}	
 
+		// Safely Scale UMA
 		if(_doScale && GetComponent<Collider>() != null && !_isScaled)
 		{
 			transform.Find("Root").transform.localScale *= _scale;
