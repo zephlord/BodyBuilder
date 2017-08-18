@@ -3,12 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using SimpleJSON;
 
+///<summary>
+/// a container for information on an environment stored in the server
+///</summary>
 public class ExperienceInfoBundle {
 
+	// the ID on the server
 	private string assetID;
+	// the environment name
 	private string name;
+	// the thumbnail urls
 	private string[] thumbs;
+	// the description
 	private string info;
+	// the name of the scene to be loaded
 	private string sceneName;
 
 	public ExperienceInfoBundle(JSONNode infoNode)
@@ -23,27 +31,27 @@ public class ExperienceInfoBundle {
 			thumbs[i] = thumbArray[i].Value;
 	}
 
-	 public override string ToString()
-	 {
-		 return name;
-	 }
+	public override string ToString()
+	{
+		return name;
+	}
 
-	 public string getName(){
-		 return name;
-	 }
+	public string getName(){
+		return name;
+	}
 
-	 public string getInfo(){
-		 return info;
-	 }
+	public string getInfo(){
+		return info;
+	}
 
-	 public string getID(){
-		 return assetID;
-	 }
+	public string getID(){
+		return assetID;
+	}
 
-	 public string[] getThumbIDs(){
-		 return thumbs;
-	 }
-	 public string getSceneName(){
-		 return sceneName;
-	 }
+	public string[] getThumbIDs(){
+		return thumbs;
+	}
+	public string getSceneName(){
+		return sceneName;
+	}
 }

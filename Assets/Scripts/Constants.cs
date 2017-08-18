@@ -112,33 +112,7 @@ public static class Constants {
 	public static string SERVER_API_UPLOAD_ANIMATION = "/animation";
 
 	
-	/// MISC
-	public const float FRAME_RATE = 5;
-
-	public static float CAMERA_MOVE_AMOUNT = 1;
-	public static float PLACEMENT_DISTANCE = 25;
-
-	public enum CameraControls
-	{
-		FORWARD = 0,
-		BACKWARD = 1,
-		LEFT = 2,
-		RIGHT = 3,
-		UP = 4,
-		DOWN = 5,
-		ZOOM_IN = 6,
-		ZOOM_OUT = 7,
-		ROTATE_PLUS_X = 8,
-		ROTATE_MINUS_X = 9,
-		ROTATE_PLUS_Y = 10,
-		ROTATE_MINUS_Y = 11,
-		ROTATE_PLUS_Z = 12,
-		ROTATE_MINUS_Z = 13
-
-	};
-
-
-	/// AVATAR 
+/// AVATAR 
 	public static List<string> AVATAR_DNA = new List<string>(){
 		"height",
 		"armLength",
@@ -159,12 +133,36 @@ public static class Constants {
 
 	};
 
+	/// ANIMATION PREVIEW 
 	public static string ENTER_ANIMATIONS_BOOL = "animPreview";
 	public static string TOGGLE_MODIFIED_ANIM_BOOL = "toggleModAnim";
 	public static string DEFAULT_ANIM_1 = "BindPose";
 	public static string DEFAULT_ANIM_2 = "ButtonPush_LH";
 
-	public static string ANIMATION_BUCKET_SUFFIX = "-animations";
+	///SENDING PATIENT VIEW
+	public const float FRAME_RATE = 5;
+	public static float CAMERA_MOVE_AMOUNT = 1;
+	public static float PLACEMENT_DISTANCE = 25;
+	public enum CameraControls
+	{
+		FORWARD = 0,
+		BACKWARD = 1,
+		LEFT = 2,
+		RIGHT = 3,
+		UP = 4,
+		DOWN = 5,
+		ZOOM_IN = 6,
+		ZOOM_OUT = 7,
+		ROTATE_PLUS_X = 8,
+		ROTATE_MINUS_X = 9,
+		ROTATE_PLUS_Y = 10,
+		ROTATE_MINUS_Y = 11,
+		ROTATE_PLUS_Z = 12,
+		ROTATE_MINUS_Z = 13
 
+	};
+
+	/// MISC
+	public static string ANIMATION_BUCKET_SUFFIX = "-animations";
 	public static string UMA_OUT_FILE = "umaOut.txt";
 }
