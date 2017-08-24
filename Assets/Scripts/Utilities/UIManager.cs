@@ -2,17 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-///<summary>
-/// manages ui elements in a sequence
-///</summary>
 public class UIManager : MonoBehaviour {
 
-	
 	[System.Serializable]
-	///<summary>
-	/// a UI Set is a ui element
-	/// and whether or not (and if so where) it needs the avatar to be shown while its UI is displayed
-	///</summary>
 	public struct uiSet
 	{
 		public GameObject obj;
@@ -20,10 +12,8 @@ public class UIManager : MonoBehaviour {
 		public bool needsAvatar;
 	}
 
-	// the UI elements
 	[SerializeField]
 	private uiSet[] _UIs;
-	// The avatar
 	[SerializeField]
 	private GameObject _avatar;
 	private int _index;
@@ -34,26 +24,28 @@ public class UIManager : MonoBehaviour {
 		_UIs[_index].obj.SetActive(true);
 	}
 	
-	///<summary>
-	///Goes to the next ui in the sequence
-	///</summary>
-	public void nextUI()
+
+	private void swapUI(int newIndex)
 	{
 		_UIs[_index].obj.SetActive(false);
-		_index = Mathf.Min( _index +1, _UIs.Length - 1);
+		_index = newIndex;
 		_UIs[_index].obj.SetActive(true);
-		setAvatar (_UIs [_index]);
+		setAvatar(_UIs[_index]);
 	}
 
-	///<summary>
-	///Goes to the previous ui in the sequence
-	///</summary>
+	public void nextUI()
+	{
+		swapUI(Mathf.Min( _index +1, _UIs.Length - 1));
+	}
+
 	public void previousUI()
 	{
-		_UIs[_index].obj.SetActive(false);
-		_index = Mathf.Max( _index - 1, 0);
-		_UIs[_index].obj.SetActive(true);
-		setAvatar (_UIs [_index]);
+		swapUI(Mathf.Max( _index - 1, 0));
+	}
+
+	public void goToUI(int uiIndex)
+	{
+		swapUI(uiIndex);
 	}
 
 	private void setAvatar(uiSet ui)
@@ -64,4 +56,5 @@ public class UIManager : MonoBehaviour {
 		} else
 			_avatar.SetActive (false);
 	}
+
 }

@@ -33,10 +33,10 @@ public class ExperiencePreviewController : MonoBehaviour {
 	///<summary>
 	/// update the preview with new content
 	///</summary>
-	public void selectNewExperience(ExperienceInfoListBox selected)
+	public void selectNewExperience(ExperienceInfoBundle selected)
 	{
 		_thumbURLCount = 0;
-		_experienceInfo = selected.content;
+		_experienceInfo = selected;
 		_experienceInfoUI.SetActive(true);
 		updateContentDisplay();
 		
