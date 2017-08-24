@@ -35,6 +35,8 @@ using System.Threading;
 using UnityEngine;
 using WebSocketSharp;
 using WebSocketSharp.Net;
+using SimpleJSON;
+
 
 namespace SocketIO
 {
@@ -231,7 +233,8 @@ namespace SocketIO
 		{
 			EmitMessage(-1, string.Format("[\"{0}\",{1}]", ev, data));
 		}
-		public void Emit(string ev, SimpleJSON.JSONNode data)
+
+		public void Emit(string ev, JSONNode data)
 		{
 			EmitMessage(-1, string.Format("[\"{0}\",{1}]", ev, data));
 		}

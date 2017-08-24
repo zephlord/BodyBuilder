@@ -17,13 +17,15 @@ namespace UMA.AssetBundles
             return GetPlatformForAssetBundles(Application.platform);
     #endif
         }
-    #if UNITY_EDITOR
+
+        #if UNITY_EDITOR
 
         public static string GetPlatformName(BuildTarget target)
         {
             return GetPlatformForAssetBundles(target);
         }
-    #endif
+
+        #endif
 
     #if UNITY_EDITOR
         private static string GetPlatformForAssetBundles(BuildTarget target)
